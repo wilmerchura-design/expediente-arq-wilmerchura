@@ -1,0 +1,145 @@
+<mxfile host="app.diagrams.net" modified="2026-09-07T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="Parcial1 - Despues" id="parcial1_despues">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+<mxCell id="titulo" value="Parcial 1 - Variante A - Farmacia San Rafael (DESPUES)&#10;Alumno: Wilmer Chura" style="text;html=1;fontSize=16;fontStyle=1;align=left;verticalAlign=top;" vertex="1" parent="1">
+  <mxGeometry x="40" y="10" width="700" height="50" as="geometry"/>
+</mxCell>
+<mxCell id="iempleado" value="&#171;interface&#187;&#10;IEmpleadoDeFarmacia" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="40" y="90" width="240" height="66" as="geometry"/>
+</mxCell>
+<mxCell id="iempleado_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="iempleado">
+  <mxGeometry y="34" width="240" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="iempleado_methods" value="+ registrarPedido(medicamento, cantidad): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;fontStyle=2;" vertex="1" parent="iempleado">
+  <mxGeometry y="42" width="240" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="iempleadofarm" value="&#171;interface&#187;&#10;IEmpleadoFarmaceutico" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="340" y="90" width="260" height="98" as="geometry"/>
+</mxCell>
+<mxCell id="iempleadofarm_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="iempleadofarm">
+  <mxGeometry y="34" width="260" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="iempleadofarm_methods" value="+ autorizarVentaControlada(medicamento): void&#10;+ ajustarPrecio(medicamento, nuevoPrecio): void&#10;+ verLibroDeControlados(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;fontStyle=2;" vertex="1" parent="iempleadofarm">
+  <mxGeometry y="42" width="260" height="56" as="geometry"/>
+</mxCell>
+<mxCell id="farmaceutico" value="Farmaceutico" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="340" y="260" width="220" height="138" as="geometry"/>
+</mxCell>
+<mxCell id="farmaceutico_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="farmaceutico">
+  <mxGeometry y="26" width="220" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="farmaceutico_attrs" value=" " style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="farmaceutico">
+  <mxGeometry y="34" width="220" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="farmaceutico_sep2" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="farmaceutico">
+  <mxGeometry y="58" width="220" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="farmaceutico_methods" value="+ registrarPedido(): void&#10;+ autorizarVentaControlada(): void&#10;+ ajustarPrecio(): void&#10;+ verLibroDeControlados(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="farmaceutico">
+  <mxGeometry y="66" width="220" height="72" as="geometry"/>
+</mxCell>
+<mxCell id="cajero" value="Cajero" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="40" y="260" width="200" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="cajero_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="cajero">
+  <mxGeometry y="26" width="200" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="cajero_attrs" value=" " style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="cajero">
+  <mxGeometry y="34" width="200" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="cajero_sep2" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="cajero">
+  <mxGeometry y="58" width="200" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="cajero_methods" value="+ registrarPedido(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="cajero">
+  <mxGeometry y="66" width="200" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="irepo" value="&#171;interface&#187;&#10;IRepositorioPedidos" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="700" y="90" width="240" height="66" as="geometry"/>
+</mxCell>
+<mxCell id="irepo_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="irepo">
+  <mxGeometry y="34" width="240" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="irepo_methods" value="+ guardarPedido(cliente, medicamento, cantidad, total): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;fontStyle=2;" vertex="1" parent="irepo">
+  <mxGeometry y="42" width="240" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="inotif" value="&#171;interface&#187;&#10;INotificador" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=34;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="990" y="90" width="220" height="66" as="geometry"/>
+</mxCell>
+<mxCell id="inotif_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="inotif">
+  <mxGeometry y="34" width="220" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="inotif_methods" value="+ enviar(mensaje): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;fontStyle=2;" vertex="1" parent="inotif">
+  <mxGeometry y="42" width="220" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="mysql" value="BaseDeDatosMySql" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="700" y="260" width="220" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="mysql_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="mysql">
+  <mxGeometry y="26" width="220" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="mysql_attrs" value=" " style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="mysql">
+  <mxGeometry y="34" width="220" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="mysql_sep2" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="mysql">
+  <mxGeometry y="58" width="220" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="mysql_methods" value="+ guardarPedido(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="mysql">
+  <mxGeometry y="66" width="220" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="smtp" value="CorreoSmtp" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="990" y="260" width="200" height="90" as="geometry"/>
+</mxCell>
+<mxCell id="smtp_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="smtp">
+  <mxGeometry y="26" width="200" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="smtp_attrs" value=" " style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="smtp">
+  <mxGeometry y="34" width="200" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="smtp_sep2" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="smtp">
+  <mxGeometry y="58" width="200" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="smtp_methods" value="+ enviar(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="smtp">
+  <mxGeometry y="66" width="200" height="24" as="geometry"/>
+</mxCell>
+<mxCell id="gestor" value="GestorDePedidos" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#ffffff;" vertex="1" parent="1">
+  <mxGeometry x="500" y="460" width="260" height="122" as="geometry"/>
+</mxCell>
+<mxCell id="gestor_sep1" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="gestor">
+  <mxGeometry y="26" width="260" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="gestor_attrs" value="- repositorio: IRepositorioPedidos&#10;- notificador: INotificador" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="gestor">
+  <mxGeometry y="34" width="260" height="40" as="geometry"/>
+</mxCell>
+<mxCell id="gestor_sep2" value="" style="line;html=1;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;points=[];portConstraint=eastwest;" vertex="1" parent="gestor">
+  <mxGeometry y="74" width="260" height="8" as="geometry"/>
+</mxCell>
+<mxCell id="gestor_methods" value="+ GestorDePedidos(repositorio, notificador)&#10;+ procesarPedido(cliente, tipoCliente, medicamento, cantidad, precioUnitario): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;fontSize=11;" vertex="1" parent="gestor">
+  <mxGeometry y="82" width="260" height="40" as="geometry"/>
+</mxCell>
+<mxCell id="e1" value="" style="endArrow=block;endFill=0;dashed=0;html=1;rounded=0;" edge="1" parent="1" source="iempleadofarm" target="iempleado">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="e2" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;" edge="1" parent="1" source="farmaceutico" target="iempleadofarm">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="e3" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;" edge="1" parent="1" source="cajero" target="iempleado">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="e4" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;" edge="1" parent="1" source="mysql" target="irepo">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="e5" value="" style="endArrow=block;endFill=0;dashed=1;html=1;rounded=0;" edge="1" parent="1" source="smtp" target="inotif">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="e6" value="usa" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;fontSize=10;" edge="1" parent="1" source="gestor" target="irepo">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+<mxCell id="e7" value="usa" style="endArrow=open;endFill=0;dashed=1;html=1;rounded=0;fontSize=10;" edge="1" parent="1" source="gestor" target="inotif">
+  <mxGeometry relative="1" as="geometry"><mxPoint as="sourcePoint"/><mxPoint as="targetPoint"/></mxGeometry>
+</mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
