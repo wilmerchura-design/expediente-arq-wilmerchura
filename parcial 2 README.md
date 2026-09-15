@@ -1,1 +1,0 @@
-presentad parcial 2
