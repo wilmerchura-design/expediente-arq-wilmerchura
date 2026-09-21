@@ -1,51 +1,63 @@
-# H4 — Documentación de la decisión (Sistema de Parqueo "San Rafael")
+# H4 — (Sistema de Parqueo )
 
 ## C4 — Nivel 1: Contexto
 
 ```mermaid
-C4Context
-    title Sistema de Parqueo de Automóviles (Nivel 1 - Contexto)
+flowchart TD
+    Cliente["Cliente<br/>Ingresa y retira su vehiculo, paga"]
+    Operador["Operador de caseta<br/>Registra ingresos, salidas y cobros"]
+    Sistema["SISTEMA DE PARQUEO<br/>Gestiona vehiculos, espacios, tarifas, tickets y pagos"]
+    Pasarela["Pasarela de pago externa<br/>Procesa cobros con tarjeta"]
+    Lector["Lector de placas externo<br/>Reconoce la placa automaticamente"]
 
-    Person(cliente, "Cliente", "Persona que ingresa su vehiculo al parqueo")
-    Person(operador, "Operador de caseta", "Registra entradas, salidas y cobros")
+    Cliente -- "Ingresa/retira, paga" --> Sistema
+    Operador -- "Registra ingresos y cobra" --> Sistema
+    Sistema -- "Envia el cobro" --> Pasarela
+    Sistema -- "Solicita lectura de placa" --> Lector
 
-    System(sistemaParqueo, "Sistema de Parqueo", "Gestiona vehiculos, espacios, ingresos, tarifas, tickets y pagos")
+    classDef persona fill:#08427b,color:#fff,stroke:#052e56;
+    classDef sistema fill:#1168bd,color:#fff,stroke:#0b4884;
+    classDef externo fill:#999999,color:#fff,stroke:#6b6b6b;
 
-    System_Ext(pasarelaPago, "Pasarela de pago externa", "Procesa cobros con tarjeta (SDK de un proveedor)")
-    System_Ext(lectorPlacas, "Lector de placas", "Hardware/SDK que reconoce automaticamente la placa del vehiculo")
-
-    Rel(cliente, sistemaParqueo, "Ingresa/retira su vehiculo, paga")
-    Rel(operador, sistemaParqueo, "Registra ingresos y salidas, cobra")
-    Rel(sistemaParqueo, pasarelaPago, "Envia el cobro con tarjeta")
-    Rel(sistemaParqueo, lectorPlacas, "Solicita la lectura de la placa")
+    class Cliente,Operador persona;
+    class Sistema sistema;
+    class Pasarela,Lector externo;
 ```
 
 ## C4 — Nivel 2: Contenedores
 
 ```mermaid
-C4Container
-    title Sistema de Parqueo de Automóviles (Nivel 2 - Contenedores)
+flowchart TD
+    Cliente["Cliente"]
+    Operador["Operador de caseta"]
 
-    Person(cliente, "Cliente")
-    Person(operador, "Operador de caseta")
+    subgraph Sistema["SISTEMA DE PARQUEO"]
+        App["Aplicacion de caseta [PHP]<br/>Registra ingresos, salidas y solicita el cobro"]
+        Costo["Modulo de Calculo de Costos [PHP]<br/>AQUI viven Strategy (tarifa por vehiculo)<br/>+ Decorator (lavado, valet, seguro)"]
+        Ticket["Modulo de Tickets [PHP]<br/>Genera y valida el ticket de ingreso"]
+        DB[("Base de datos [MySQL]<br/>Vehiculos, espacios, ingresos, pagos")]
+    end
 
-    System_Boundary(sistemaParqueo, "Sistema de Parqueo") {
-        Container(appCaseta, "Aplicacion de caseta", "PHP", "Registra ingresos, salidas y solicita el cobro")
-        Container(moduloCosto, "Modulo de Calculo de Costos", "PHP", "AQUI viven los 2 patrones fusionados: Strategy (tarifa segun tipo de vehiculo) + Decorator (servicios adicionales: lavado, valet, seguro)")
-        Container(moduloTicket, "Modulo de Tickets", "PHP", "Genera y valida el ticket de ingreso")
-        ContainerDb(baseDatos, "Base de datos", "MySQL", "Guarda vehiculos, espacios, ingresos y pagos")
-    }
+    Pasarela["Pasarela de pago externa"]
+    Lector["Lector de placas externo"]
 
-    System_Ext(pasarelaPago, "Pasarela de pago externa")
-    System_Ext(lectorPlacas, "Lector de placas externo")
+    Cliente --> App
+    Operador --> App
+    App -- "Pide el costo final" --> Costo
+    App -- "Genera el ticket" --> Ticket
+    App -- "Lee / escribe" --> DB
+    App -- "Cobra con tarjeta (via Adapter)" --> Pasarela
+    App -- "Lee la placa (via Adapter)" --> Lector
 
-    Rel(cliente, appCaseta, "Usa")
-    Rel(operador, appCaseta, "Usa")
-    Rel(appCaseta, moduloCosto, "Pide el costo final del ingreso (tarifa + servicios)")
-    Rel(appCaseta, moduloTicket, "Genera el ticket")
-    Rel(appCaseta, baseDatos, "Lee / escribe")
-    Rel(appCaseta, pasarelaPago, "Cobra con tarjeta (via Adapter, h3/con-adapter)")
-    Rel(appCaseta, lectorPlacas, "Lee la placa (via Adapter, h3/con-adapter)")
+    classDef persona fill:#08427b,color:#fff,stroke:#052e56;
+    classDef contenedor fill:#438dd5,color:#fff,stroke:#2e6295;
+    classDef bd fill:#438dd5,color:#fff,stroke:#2e6295;
+    classDef externo fill:#999999,color:#fff,stroke:#6b6b6b;
+
+    class Cliente,Operador persona;
+    class App,Costo,Ticket contenedor;
+    class DB bd;
+    class Pasarela,Lector externo;
 ```
 
 El **Módulo de Cálculo de Costos** es donde conviven los dos patrones
@@ -53,3 +65,4 @@ fusionados en `h3/final/`: `ServicioBasico` usa una `CalculadoraTarifa`
 (Strategy) para el costo base según el tipo de vehículo, y los decoradores
 (`ConLavado`, `ConValet`, `ConSeguroAdicional`) envuelven ese resultado para
 sumar cualquier combinación de servicios adicionales.
+
